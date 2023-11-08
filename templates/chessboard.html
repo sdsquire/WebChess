@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asynchronous Chess Game</title>
+    <style>
+        /* Add basic styling for your chessboard here */
+        .chessboard {
+            width: 320px;
+            height: 320px;
+            margin: 20px;
+            display: grid;
+            grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+        }
+        .chessboard > div {
+            width: 40px;
+            height: 40px;
+        }
+        .dark {
+            background-color: #769656;
+        }
+        .light {
+            background-color: #eeeed2;
+        }
+    </style>
+</head>
+<body>
+    <div class="chessboard">
+        <!-- Generate chessboard squares here -->
+        {% for i in range(64) %}
+            <div class="{{ 'dark' if (i//8 + i)%2 else 'light' }}"></div>
+        {% endfor %}
+    </div>
+</body>
+</html>
